@@ -1,20 +1,25 @@
 # Document Intelligence Extraction System
 
-Production-ready document intelligence platform for extracting structured fields, classifying documents, and serving document analysis through APIs and CLI workflows.
+Deployable document AI service for classifying documents, extracting structured fields, assigning confidence, and producing traceable extraction events for review workflows.
 
-## Features
+## Core Capabilities
 
 - Document text normalization
-- Rule-based field extraction
-- Document classification
-- Confidence scoring
-- FastAPI extraction API
+- Rule-based document classification
+- Structured field extraction for invoice-style documents
+- Confidence scoring and review-required status
+- Extraction IDs for traceability
+- Extraction version metadata in every response
+- Processing time measurement
+- Tenant, source, document name, and submitter metadata
+- JSONL extraction audit stream for local demo and review mode
+- FastAPI `/extract` endpoint
 - CLI workflows for demo and analysis
-- JSON document example
+- Runtime configuration through environment variables
 - Docker and Docker Compose deployment
 - GitHub Actions CI
-- Pytest test suite
-- Architecture and deployment documentation
+- Pytest coverage
+- Operations runbook and architecture decision record
 
 ## Quickstart
 
@@ -40,14 +45,24 @@ curl -X POST http://localhost:8000/extract \
 docker-compose up --build
 ```
 
-## Docs
+## Runtime Configuration
+
+See `.env.example` for environment, extraction version, audit path, confidence threshold, and document size settings.
+
+## Documentation
 
 - `ARCHITECTURE.md`
 - `DEPLOYMENT.md`
+- `OPERATIONS.md`
+- `docs/adr-001-extraction-service-metadata.md`
 - `sample_document.json`
 
-## Portfolio Highlights
+## Production Roadmap
 
-- Demonstrates document AI, extraction pipelines, API design, and production engineering
-- Useful for invoices, contracts, forms, receipts, KYC, and enterprise document workflows
-- Strong foundation for OCR, LLM extraction, vector search, human review queues, and enterprise document automation
+- OCR support for scanned PDFs and images
+- LLM-based extraction with schema validation
+- Human review queue for low-confidence cases
+- Database-backed document and extraction storage
+- Tenant-level access control
+- Batch processing workers
+- Dashboard for extraction quality and review status

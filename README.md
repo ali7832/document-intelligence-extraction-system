@@ -1,6 +1,6 @@
 # Document Intelligence Extraction System
 
-Deployable document AI service for classifying documents, extracting structured fields, assigning confidence, and producing traceable extraction events for review workflows.
+Deployable document AI service for classifying documents, extracting structured fields, assigning confidence, producing traceable extraction events for review workflows, and presenting the workflow through a premium React document operations dashboard.
 
 ## Core Capabilities
 
@@ -20,6 +20,7 @@ Deployable document AI service for classifying documents, extracting structured 
 - GitHub Actions CI
 - Pytest coverage
 - Operations runbook and architecture decision record
+- Multi-page React/Vite document intelligence frontend
 
 ## Quickstart
 
@@ -29,6 +30,30 @@ docintel demo
 uvicorn doc_intelligence.api:app --reload
 pytest -q
 ```
+
+## Frontend DocIntel AI Dashboard
+
+The `frontend/` directory contains a premium React/Vite command center for document extraction, confidence review, validation, exports, and audit workflows.
+
+```bash
+cd frontend
+npm install
+npm run dev
+```
+
+Open `http://localhost:5173`.
+
+Frontend pages:
+
+- Overview: processed documents, straight-through rate, review queue, confidence, and document mix charts
+- Extraction Lab: interactive document text input with structured field extraction preview
+- Review Queue: low-confidence and exception-based human review workflow
+- Validation: field validation rules and current extraction checks
+- Search: searchable document metadata and indexed extraction records
+- Exports: JSON, CSV, webhook, ERP, finance workflow, and compliance archive handoff
+- Audit: traceable extraction event stream for compliance review
+
+The UI attempts to call `/extract` and falls back to demo document intelligence when the backend is offline.
 
 ## API
 

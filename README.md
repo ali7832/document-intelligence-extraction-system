@@ -2,6 +2,12 @@
 
 Deployable document AI service for classifying documents, extracting structured fields, assigning confidence, producing traceable extraction events for review workflows, and presenting the workflow through a premium React document operations dashboard.
 
+## Product Demo Video
+
+
+https://github.com/user-attachments/assets/fcc6531a-ad78-4e7e-bfcf-1e3e9c82b6e5
+
+
 ## Core Capabilities
 
 - Document text normalization
